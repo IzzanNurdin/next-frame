@@ -1,7 +1,12 @@
 import Link from 'next/link'
+import { NextPage } from 'next'
 import fetch from 'isomorphic-unfetch'
 
-function Index({ stars }) {
+interface Props {
+  stars: any
+}
+
+const Index: NextPage<Props> = ({ stars }) => {
   return (
     <div>
       <p className="col-md-2">Halo Dunia!</p>
@@ -13,7 +18,7 @@ function Index({ stars }) {
   )
 }
 
-Index.getInitialProps = async ctx => {
+Index.getInitialProps = async (ctx: any) => {
   const res = await fetch('https://api.github.com/repos/zeit/next.js')
   const json = await res.json()
   /**
