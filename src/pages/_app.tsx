@@ -6,7 +6,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <p>This can be a Header</p>
       <Component {...pageProps} />
-      <p style={{ marginTop: '1rem' }}>This can be a Footer</p>
+      <footer style={{ marginTop: '1rem' }}>This can be a Footer</footer>
+
+      <style jsx>
+        {`
+          footer {
+            margin-top: 1rem;
+          }
+        `}
+      </style>
     </>
   )
 }
